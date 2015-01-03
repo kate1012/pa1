@@ -1,0 +1,70 @@
+input: “\b” “hello \b world”
+output: hello
+ 	world
+
+input: “ \b” “hello \b world”
+output: hello
+	world
+
+input: “\\n” “hello\\nworld”
+output: hello
+	world
+
+input: “\\n” “hello\nworld”
+output: hello
+	world
+
+input: “. ,” “...hello, world...”
+output: hello
+	world
+
+input: “wor\n” “hello world\n”
+output: hell
+
+	ld
+
+input: “wor” “hello world\n”
+output: hell
+
+	ld[0x0a]
+
+input: “” “\n\t\b\a\f”
+output: [0x0a][0x09][0x08][0x07][0x0c]
+
+input: “” “hello\world”
+output: helloworld
+
+input: “s” “sea shells sea shellS by\ the sea shore”
+output: ea
+	hell
+
+	ea
+	hellS by the
+	ea
+	hore
+
+input: “s” “seashellsseashellSbytheseashore”
+output: ea
+	hell
+	ea
+	hellSbythe
+	ea
+	hore
+
+input: “.” “h.e.l.l.o. w.o.r.l.d…..”
+output: h
+	e
+	l
+	l
+	o
+	 w
+	o
+	r
+	l
+	d
+
+input: “\n.” “hello.world\n”
+output: hello
+	world
+
+
